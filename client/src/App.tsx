@@ -1,10 +1,18 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
+import Hero from './pages/hero/Hero'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
